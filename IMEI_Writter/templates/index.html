@@ -1,0 +1,656 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+ 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>IMEI WRITER</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    
+    
+    <script>
+        var doneTypingInterval = 1000;  // Time in milliseconds (1 second)
+        function isValidQRCodeValue(value) { // to check the entered a valid qr code
+             // Define a regular expression pattern to match the expected format
+            const pattern = /^\d{15}\/[A-Z0-9]{8,32}$/;
+            console.log(pattern.test(value))
+            return pattern.test(value);
+                }
+    
+    
+    
+    document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("IMEI_FIELD_1");   //IMEI FIELD 1
+            var com_div = document.getElementById("Socket1");     //COMPORT
+            var com=com_div.textContent;
+            var typingTimer; // Timer identifier
+            
+            console.log(com)
+            
+            inputField.addEventListener("input", function() {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function() {
+            if (isValidQRCodeValue(inputField.value)) {
+                var csrftoken = getCookie('csrftoken');
+                callDjangoView(inputField.value, com, csrftoken);
+            }
+        }, doneTypingInterval);
+    });
+});
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+                var inputField = document.getElementById("IMEI_FIELD_2");   //IMEI FIELD 2
+                var com_div = document.getElementById("Socket2");     //COMPORT
+                var com=com_div.textContent;
+                var typingTimer; // Timer identifier
+                
+                console.log(com)
+                
+                inputField.addEventListener("input", function() {
+                    clearTimeout(typingTimer);
+                    typingTimer = setTimeout(function() {
+                if (isValidQRCodeValue(inputField.value)) {
+                    var csrftoken = getCookie('csrftoken');
+                    callDjangoView(inputField.value, com, csrftoken);
+                }
+            }, doneTypingInterval);
+        });
+    });
+        
+        
+    
+    document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("IMEI_FIELD_3");   //IMEI FIELD 3
+            var com_div = document.getElementById("Socket3");     //COMPORT
+            var com=com_div.textContent;
+            var typingTimer; // Timer identifier
+            
+            console.log(com)
+            
+            inputField.addEventListener("input", function() {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function() {
+            if (isValidQRCodeValue(inputField.value)) {
+                var csrftoken = getCookie('csrftoken');
+                callDjangoView(inputField.value, com, csrftoken);
+            }
+        }, doneTypingInterval);
+    });
+});
+        
+    
+    
+    document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("IMEI_FIELD_4");   //IMEI FIELD 4
+            var com_div = document.getElementById("Socket4");     //COMPORT
+            var com=com_div.textContent;
+            var typingTimer; // Timer identifier
+            
+            console.log(com)
+            
+            inputField.addEventListener("input", function() {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function() {
+            if (isValidQRCodeValue(inputField.value)) {
+                var csrftoken = getCookie('csrftoken');
+                callDjangoView(inputField.value, com, csrftoken);
+            }
+        }, doneTypingInterval);
+    });
+});
+        
+    
+    
+    document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("IMEI_FIELD_5");   //IMEI FIELD 5
+            var com_div = document.getElementById("Socket5");     //COMPORT
+            var com=com_div.textContent;
+            var typingTimer; // Timer identifier
+            
+            console.log(com)
+            
+            inputField.addEventListener("input", function() {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function() {
+            if (isValidQRCodeValue(inputField.value)) {
+                var csrftoken = getCookie('csrftoken');
+                callDjangoView(inputField.value, com, csrftoken);
+            }
+        }, doneTypingInterval);
+    });
+});
+        
+        
+   
+    document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("IMEI_FIELD_6");   //IMEI FIELD 6
+            var com_div = document.getElementById("Socket6");     //COMPORT
+            var com=com_div.textContent;
+            var typingTimer; // Timer identifier
+            
+            console.log(com)
+            
+            inputField.addEventListener("input", function() {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function() {
+            if (isValidQRCodeValue(inputField.value)) {
+                var csrftoken = getCookie('csrftoken');
+                callDjangoView(inputField.value, com, csrftoken);
+            }
+        }, doneTypingInterval);
+    });
+});
+        
+    
+    
+    document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("IMEI_FIELD_7");   //IMEI FIELD 7
+            var com_div = document.getElementById("Socket7");     //COMPORT
+            var com=com_div.textContent;
+            var typingTimer; // Timer identifier
+            
+            console.log(com)
+            
+            inputField.addEventListener("input", function() {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function() {
+            if (isValidQRCodeValue(inputField.value)) {
+                var csrftoken = getCookie('csrftoken');
+                callDjangoView(inputField.value, com, csrftoken);
+            }
+        }, doneTypingInterval);
+    });
+});
+        
+        
+    
+    document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("IMEI_FIELD_8");   //IMEI FIELD 8
+            var com_div = document.getElementById("Socket8");     //COMPORT
+            var com=com_div.textContent;
+            var typingTimer; // Timer identifier
+            
+            console.log(com)
+            
+            inputField.addEventListener("input", function() {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function() {
+            if (isValidQRCodeValue(inputField.value)) {
+                var csrftoken = getCookie('csrftoken');
+                callDjangoView(inputField.value, com, csrftoken);
+            }
+        }, doneTypingInterval);
+    });
+});
+        
+     
+        // Main function to call views function
+        function callDjangoView(inputData,com,csrfToken) {        
+            // Send an AJAX request to Django view with inputData
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "{% url 'start-test' %}", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader("X-CSRFToken", csrfToken);
+            xhr.onreadystatechange = function() {
+                
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    console.log(response.message);
+                }
+            };
+            
+            // Create a JSON object with the input data
+            var data = {
+                "input_data": inputData,
+                "com_port":com
+            };
+
+            // Send the JSON data as the request body
+            xhr.send(JSON.stringify(data));
+        
+            //const eventSource = new EventSource('/sse/');
+
+            //const socket = new WebSocket('ws://localhost:8000/');
+
+//socket.onopen = function (event) {
+    //console.log('WebSocket connection opened:', event);
+//};
+
+//socket.onmessage = function (event) {
+    //const data = JSON.parse(event.data);
+    //console.log('WebSocket message received:', data);
+    // handle the received message
+//};
+
+//socket.onclose = function (event) {
+    //console.log('WebSocket connection closed:', event);
+//};
+
+// Send a message to the server
+//const message = { 'message': 'Hello, server!' };
+//socket.send(JSON.stringify(message));
+
+
+
+
+//eventSource.onmessage = function(event) {
+   // const data = event.data;
+    //console.log('Received message from server:', data);
+    
+    // Handle the received message in your front-end UI
+//};
+
+//eventSource.onopen = function(event) {
+    //console.log('SSE connection established.');
+    
+//};
+
+//eventSource.onerror = function(event) {
+    //console.error('Error occurred:', event);
+//};
+        
+        
+        
+        
+        }
+    
+        
+        function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    
+//     const eventSource = new EventSource('/sse/');
+
+// eventSource.onmessage = function(event) {
+//     const data = event.data;
+//     console.log('Received message from server:', data);
+    
+//     // Handle the received message in your front-end UI
+// };
+
+// eventSource.onopen = function(event) {
+//     console.log('SSE connection established.');
+// };
+
+// eventSource.onerror = function(event) {
+//     console.error('Error occurred:', event);
+// };
+    </script>
+    
+    
+    <style>
+        button {
+            display: flex;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 6px 12px;
+            margin-top: 4px;
+            margin-right: 5px;
+            margin-bottom: 2px;
+            background-color: #0d6dfdd2;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #000000c2;
+            color: white;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.9;
+        }
+
+        span {
+            font-size: 21px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="realtime-data-container"></div>    
+    <!--for development  purpose-->
+    
+    <div class="row">
+        <div class="col-md-2">
+            <div class="row d-flex flex-column">
+                <div><img style="top: 6px;left: 12px; height: 70px;" src="{% static 'images/cavli-logo.png' %}" alt=""></div>
+                <span class="">{{VARIANT}}</span><br>
+                <span class="m-0">IMEI WRITER TOOL</span>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <form id="portForm" class="mb-1 d-flex flex-column">
+                <!-- Socket 1 -->
+                <div class="row" style="padding-left: 6rem;">
+                    <div class="col-md-9 d-flex flex-row" data-socket="1" id="socket1">
+                        <div class="msg-pop" id="msg3">
+                            <div class="content">
+                                <div class="pop-head">
+                                    <div  class="not" >1 </div>
+                                    <div  id="Socket1" style="margin-right: 232px;">{{SOCKETS.0.comport}}</div>
+                                    <div class="title"></div>
+                                </div>
+                                <input class="form-control" type="text" id="IMEI_FIELD_1" name="PORT1" data-port="3"
+                                    placeholder="Please scan IMEI, SN" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="result" id="res3">
+                            <div class="content p-0">
+                                <div class="d-flex justify-content-between px-2 align-items-center">
+                                    <small id="imei-sn"></small>
+                                    <button class="start-button-3" type="button" tabindex="-1" data-port="3"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg></button>
+                                </div>
+
+                                <div class="finish">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center justify-content-center">
+                        <div class="d-flex flex-row mx-auto justify-content-center"
+                            style="padding-left: 20px;padding-right: 20px;">
+                            <button type="button" tabindex="-1" class="start-all" id="start-all"
+                                style="padding: 20px;">Start All</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Socket 1 -->
+
+                <!-- Socket 2 -->
+                <div class="row" style="padding-left: 6rem;">
+                    <div class="col-md-9 d-flex flex-row" data-socket="2" id="socket2">
+                        <div class="msg-pop" id="msg4">
+                            <div class="content">
+                                <div class="pop-head">
+                                    <div class="not">2</div>
+                                    <div  id="Socket2" style="margin-right: 232px;">{{SOCKETS.1.comport}}</div>
+                                    
+                                    
+                                    <div class="title"></div>
+                                </div>
+                                <input class="form-control" type="text" id="IMEI_FIELD_2" name="port4" data-port="4"
+                                    placeholder="Please scan IMEI, SN">
+                            </div>
+                        </div>
+
+                        <div class="result" id="res4">
+                            <div class="content p-0">
+                                <div class="d-flex justify-content-between px-2 align-items-center">
+                                    <small id="imei-sn"></small>
+                                    <button type="button" tabindex="-1" class="start-button-4" data-port="4"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg></button>
+                                </div>
+                                <div class="finish">
+                                    <h1>fvfvfvfv</h1>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Socket 2 -->
+
+                <!-- Socket 3 -->
+                <div class="row" style="padding-left: 6rem;">
+                    <div class="col-md-9 d-flex flex-row" data-socket="3" id="socket3">
+                        <div class="msg-pop" id="msg5">
+                            <div class="content">
+                                <div class="pop-head">
+                                    <div class="not">3</div>
+                                    <div  id="Socket3" style="margin-right: 232px;">{{SOCKETS.2.comport}}</div>
+                                    <div class="title"></div>
+                                </div>
+                                <input class="form-control" type="text" id="IMEI_FIELD_3" name="port5" data-port="5"
+                                    placeholder="Please scan IMEI, SN">
+                            </div>
+                        </div>
+
+                        <div class="result" id="res5">
+                            <div class="content p-0">
+                                <div class="d-flex justify-content-between px-2 align-items-center">
+                                    <small id="imei-sn"></small>
+                                    <button type="button" tabindex="-1" class="start-button-5" data-port="5"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg></button>
+                                </div>
+                                <div class="finish">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Socket 3 -->
+
+                <!-- Socket 4 -->
+                <div class="row" style="padding-left: 6rem;">
+                    <div class="col-md-9 d-flex flex-row" data-socket="4" id="socket4">
+                        <div class="msg-pop" id="msg6">
+                            <div class="content">
+                                <div class="pop-head">
+                                    <div class="not">4</div>
+                                    <div  id="Socket4" style="margin-right: 232px;">{{SOCKETS.3.comport}}</div>
+                                    <div class="title"></div>
+                                </div>
+                                <input class="form-control" type="text" id="IMEI_FIELD_4" name="port6" data-port="6"
+                                    placeholder="Please scan IMEI, SN">
+                            </div>
+                        </div>
+
+                        <div class="result" id="res6">
+                            <div class="content p-0">
+                                <div class="d-flex justify-content-between px-2 align-items-center">
+                                    <small id="imei-sn"></small>
+                                    <button type="button" tabindex="-1" class="start-button-6" data-port="6"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg></button>
+                                </div>
+                                <div class="finish">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Socket 4 -->
+
+                <!-- Socket 5 -->
+                <div class="row" style="padding-left: 6rem;">
+                    <div class="col-md-9 d-flex flex-row" data-socket="5" id="socket5">
+                        <div class="msg-pop" id="msg7">
+                            <div class="content">
+                                <div class="pop-head">
+                                    <div class="not">5 </div>
+                                    <div  id="Socket5" style="margin-right: 232px;">{{SOCKETS.4.comport}}</div>
+                                    <div class="title"></div>
+                                </div>
+                                <input class="form-control" type="text" id="IMEI_FIELD_5" name="port7" data-port="7"
+                                    placeholder="Please scan IMEI, SN">
+                            </div>
+                        </div>
+                        <div class="result" id="res7">
+                            <div class="content p-0">
+                                <div class="d-flex justify-content-between px-2 align-items-center">
+                                    <small id="imei-sn"></small>
+                                    <button type="button" tabindex="-1" data-port="7" class="start-button-7"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg></button>
+                                </div>
+                                <div class="finish">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Socket 5 -->
+
+                <!-- Socket 6 -->
+                <div class="row" style="padding-left: 6rem;">
+                    <div class="col-md-9 d-flex flex-row" data-socket="6" id="socket6">
+                        <div class="msg-pop" id="msg8">
+                            <div class="content">
+                                <div class="pop-head">
+                                    <div class="not">6 </div>
+                                    <div  id="Socket6" style="margin-right: 232px;">{{SOCKETS.5.comport}}</div>
+                                    <div class="title"></div>
+                                </div>
+                                <input class="form-control" type="text" id="IMEI_FIELD_6" name="port8" data-port="8"
+                                    placeholder="Please scan IMEI, SN">
+                            </div>
+                        </div>
+                        <div class="result" id="res8">
+                            <div class="content p-0">
+                                <div class="d-flex justify-content-between px-2 align-items-center">
+                                    <small id="imei-sn"></small>
+                                    <button type="button" tabindex="-1" class="start-button-8" data-port="8"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg></button>
+                                </div>
+                                <div class="finish">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Socket 6 -->
+
+                <!-- Socket 7 -->
+                <div class="row" style="padding-left: 6rem;">
+                    <div class="col-md-9 d-flex flex-row" data-socket="7" id="socket7">
+                        <div class="msg-pop" id="msg9">
+                            <div class="content">
+                                <div class="pop-head">
+                                    <div class="not">7</div>
+                                    <div  id="Socket7" style="margin-right: 232px;">{{SOCKETS.6.comport}}</div>
+                                    <div class="title"></div>
+                                </div>
+                                <input class="form-control" class="form-control" type="text" id="IMEI_FIELD_7" name="port9"
+                                    data-port="9" placeholder="Please scan IMEI, SN">
+                            </div>
+                        </div>
+                        <div class="result" id="res9">
+                            <div class="content p-0">
+                                <div class="d-flex justify-content-between px-2 align-items-center">
+                                    <small id="imei-sn"></small>
+                                    <button type="button" tabindex="-1" class="start-button-9" data-port="9"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg></button>
+                                </div>
+                                <div class="finish">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Socket 7 -->
+
+                <!-- Socket 8 -->
+                <div class="row" style="padding-left: 6rem;">
+                    <div class="col-md-9 d-flex flex-row" data-socket="8" id="socket8">
+                        <div class="msg-pop" id="msg10">
+                            <div class="content">
+                                <div class="pop-head">
+                                    <div class="not">8</div>
+                                    <div  id="Socket8" style="margin-right: 232px;">{{SOCKETS.7.comport}}</div>
+
+                                    <div class="title"></div>
+                                </div>
+                                <input class="form-control" type="text" id="IMEI_FIELD_8" name="port10" data-port="10"
+                                    placeholder="Please scan IMEI, SN">
+                            </div>
+                        </div>
+
+                        <div class="result" id="res10">
+                            <div class="content p-0">
+                                <div class="d-flex justify-content-between px-2 align-items-center">
+                                    <small id="imei-sn"></small>
+                                    <button type="button" tabindex="-1" class="start-button-10" data-port="10"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg></button>
+                                </div>
+                                <div class="finish">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Socket 8 -->
+
+            </form>
+        </div>
+    </div>
+    
+
+        
+</body>
+
+</html>

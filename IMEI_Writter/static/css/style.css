@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600&display=swap");
+
+@font-face {
+    font-family: Lato;
+    src: url('assets/fonts/Lato-Regular.ttf');
+}
+
+* {
+    font-family: "Lato", "Inter", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 20px;
+    padding-top: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.96rem;
+}
+
+.msg-pop {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.pop-head {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 16px;
+    color: #4a4a4a;
+    padding: 10px;
+    padding-top: 0;
+}
+
+.not {
+    width: 22px;
+    height: 22px;
+    color: #2832d4;
+    border-radius: 50px;
+    background-color: rgba(84, 101, 255, 0.3);
+    text-align: center;
+    font-size: 12.5px;
+    padding: 2px;
+}
+
+.content {
+    background-color: #fff;
+    padding: 5%;
+    margin: 0px 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    padding-bottom: 25px;
+    height: 7rem;
+}
+
+input {
+    border: 1px solid #44444440;
+    padding: 2%;
+}
+
+.button-box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.button-active {
+    background-color: #5566ff;
+    color: #fff;
+}
+
+.finish {
+    color: #ffffff;
+    font-size: 11px;
+    overflow-y: scroll;
+    height: 75px;
+    padding-left: 8px;
+    padding-bottom: 6px;
+}
+
+p {
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Customize the scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+    background-color: #ddd;
+}

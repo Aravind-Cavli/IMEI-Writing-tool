@@ -1,0 +1,286 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">>
+    
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+
+    <title>Socket Mapping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 50vw;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px 0px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .mapping-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .mapping-row label {
+            font-weight: bold;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row d-flex justify-content-between mb-2">
+        <a href="{% url 'variant_list' %}"><button class="btn btn-dark text-center w-auto d-flex flex-row" id="selectVariantButton" type="button"></a>
+            <p class="pb-0 mb-0 px-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                </svg></p>
+            <p class="pb-0 mb-0 px-1">Select Variant</p>
+        </button>
+        <button id="editButton" class="btn btn-sm btn-outline-primary w-auto px-3 mx-3" title="Edit"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path
+                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                <path fill-rule="evenodd"
+                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+            </svg> Edit</button>
+    </div>
+    <h2 class="fs-3 text-uppercase fw-bold">Socket Mapping</h2>
+    <form id="mappingForm" class="pt-5">
+        <div id="mappingRows" class="d-flex flex-column">
+            <div class="mapping-row row">
+                <label class="col-md-1 text-center" for="socket1">S/N</label>
+                <label class="col-md-4 text-center " for="socket1">SOCKET No.</label>
+                <label class="col-md-4 text-center" for="socket1">COM PORT No.</label>
+            </div>
+            {% for item in sockets %}
+            <div class="mapping-row row">
+                <label class="col-md-1" for="socket1">{{item.sn}}</label>
+                <div class="col-md-4">
+                    <input class="form-control" min="0" type="text" id="socket1" name="socket1" value={{item.socket_id}}
+                        >
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" min="0" type="text" id="com1" name="com1"  value={{item.comport}}>
+                        
+                </div>
+            </div>
+            {% endfor %}
+            
+            <!-- <div class="mapping-row row">
+                <label class="col-md-1" for="socket2">2</label>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="socket2" name="socket2"
+                        placeholder="Enter Socket ID"></div>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="com2" name="com2"
+                        placeholder="Enter COM Port"></div>
+            </div>
+            <div class="mapping-row row">
+                <label class="col-md-1" for="socket3">3</label>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="socket3" name="socket3"
+                        placeholder="Enter Socket ID"></div>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="com3" name="com3"
+                        placeholder="Enter COM Port"></div>
+            </div>
+            <div class="mapping-row row">
+                <label class="col-md-1" for="socket4">4</label>
+                <div class="col-md-4"><input class="form-control"  min="0" type="number" id="socket4" name="socket4"
+                        placeholder="Enter Socket ID"></div>
+                <div class="col-md-4"> <input class="form-control" min="0" type="number" id="com4" name="com4"
+                        placeholder="Enter COM Port"></div>
+            </div>
+            <div class="mapping-row row">
+                <label class="col-md-1" for="socket5">5</label>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="socket5" name="socket5"
+                        placeholder="Enter Socket ID"></div>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="com5" name="com5"
+                        placeholder="Enter COM Port"></div>
+            </div>
+            <div class="mapping-row row">
+                <label class="col-md-1" for="socket6">6</label>
+                <div class="col-md-4"> <input class="form-control" min="0" type="number" id="socket6" name="socket6"
+                        placeholder="Enter Socket ID"></div>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="com6" name="com6"
+                        placeholder="Enter COM Port"></div>
+            </div>
+            <div class="mapping-row row">
+                <label class="col-md-1" for="socket7">7</label>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="socket7" name="socket7"
+                        placeholder="Enter Socket ID"></div>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="com7" name="com7"
+                        placeholder="Enter COM Port"></div>
+            </div>
+            <div class="mapping-row row">
+                <label class="col-md-1" for="socket8">8</label>
+                <div class="col-md-4"><input class="form-control" min="0" type="number" id="socket8" name="socket8"
+                        placeholder="Enter Socket ID"></div>
+                <div class="col-md-4"> <input class="form-control" min="0" type="number" id="com8" name="com8"
+                        placeholder="Enter COM Port"></div>
+            </div>  -->
+            <div class="row mt-4">
+                <button id="submitButton" class="m-auto btn btn-primary px-5 w-auto" type="button">Submit</button>
+                <div class="d-flex flex-row justify-content-center">
+                    <button id="updateButton" class="btn btn-primary px-5 w-auto mx-1" type="button"
+                        style="display: none;">Update</button>
+                    <button id="cancelButton" class="btn btn-outline-danger px-5 w-auto mx-1" type="button"
+                        style="display: none;">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>
+        const { ipcRenderer } = require('electron');
+        const sqlite3 = require('sqlite3').verbose();
+
+        // Open the SQLite database
+        const db = new sqlite3.Database('mapping.db');
+        const sockets = document.querySelectorAll('input[id^="socket"]')
+        const ports = document.querySelectorAll('input[id^="com"]')
+
+        let isEditMode = false;
+
+        const editButton = document.getElementById('editButton')
+        const updateButton = document.getElementById('updateButton')
+        const submitButton = document.getElementById('submitButton');
+        const cancelButton = document.getElementById('cancelButton');
+
+
+        editButton.addEventListener('click', () => {
+            isEditMode = true
+            updateButton.style.display = "block"
+            cancelButton.style.display = "block"
+            submitButton.style.display = "none"
+            sockets.forEach((socket) => {
+                // socket.removeAttribute('disabled')
+            })
+            ports.forEach((port) => {
+                port.removeAttribute('disabled')
+            })
+        })
+
+        cancelButton.addEventListener('click', () => {
+            ipcRenderer.send('reloadPage')
+        })
+
+        fetchMappingData().then(data => {
+            if (data.length > 0) {
+                sockets.forEach((socket) => {
+                    let socket_no = socket.id.split('socket')
+                    data.forEach((item) => {
+                        if (parseInt(socket_no[1]) == parseInt(item.socket_id)) {
+                            socket.setAttribute('value', item.socket_id)
+                            let com_port = socket.parentNode.parentNode.querySelector('input[id^="com"]')
+                            com_port.setAttribute('value', item.com_port)
+                        }
+                    })
+                })
+                sockets.forEach((socket) => {
+                    if (socket.value != '') {
+                        socket.setAttribute('disabled', 'true')
+                    }
+                })
+
+                ports.forEach((port) => {
+                    if (port.value != "") {
+                        port.setAttribute('disabled', 'true')
+                    }
+                })
+            }
+        })
+
+        // Fetch mapping data from SQLite database
+        function fetchMappingData() {
+            return new Promise((resolve, reject) => {
+                db.all('SELECT socket_id, com_port FROM socket_com_mapping ORDER BY socket_id ASC LIMIT 8', (error, rows) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        resolve(rows);
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let mappings = []
+            const form = document.getElementById('mappingForm');
+            const inputFields = form.querySelectorAll('input');
+
+            const selectVariantButton = document.getElementById('selectVariantButton');
+
+            selectVariantButton.addEventListener('click', () => {
+                ipcRenderer.send('navigateToVariantPage');
+            })
+            // Add an event listener to each input field
+            inputFields.forEach(inputField => {
+                inputField.addEventListener('input', () => {
+                    // Check if all input fields are filled
+                    const allFieldsFilled = Array.from(inputFields).every(field => field.value.trim() !== '');
+                    // Enable or disable the submit button based on the form completion
+                    submitButton.disabled = !allFieldsFilled;
+                });
+            });
+
+            submitButton.addEventListener('click', () => {
+                let mappings = []
+                for (let i = 1; i <= 8; i++) {
+                    const socket = document.getElementById(`socket${i}`)
+                    const port = document.getElementById(`com${i}`)
+                    let temp = { socket: socket.value, port: port.value }
+                    mappings.push(temp)
+                }
+                ipcRenderer.send('submitMappings', mappings);
+
+            })
+
+            updateButton.addEventListener('click', () => {
+                let mappings = []
+                for (let i = 1; i <= 8; i++) {
+                    const socket = document.getElementById(`socket${i}`)
+                    const port = document.getElementById(`com${i}`)
+                    let temp = { socket: socket.value, port: port.value }
+                    mappings.push(temp)
+                }
+                ipcRenderer.send('updateMappings', mappings)
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
